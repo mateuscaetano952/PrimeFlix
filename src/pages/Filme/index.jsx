@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import './filme-info.css'
 import api from '../../services/api'
 
+
 import { toast } from "react-toastify";
 
 function Filme() {
@@ -16,7 +17,7 @@ function Filme() {
         async function loadFilmes() {
             await api.get(`/movie/${id}`, {
                 params: {
-                    api_key: "0d44fb9b7640b129404bf39a3e6ddd57",
+                    api_key: import.meta.env.VITE_API_KEY,
                     language: 'pt-BR',
                 }
             })
